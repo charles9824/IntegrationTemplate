@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block articles %}
+{% for i in article %}
+
+            <article class="entry">
+
+              <div class="entry-img">
+                <img src=" {{ i.images.url }}" alt="" class="img-fluid">
+              </div>
+
+              <h2 class="entry-title">
+                <a href="blog-single.html">{{i.title}}</a>
+              </h2>
+
+              <div class="entry-meta">
+                <ul>
+                  <li class="d-flex align-items-center"><i class="bi bi-person"></i> <a href="blog-single.html">{{i.auteur}}</a></li>
+                  <li class="d-flex align-items-center"><i class="bi bi-clock"></i> <a href="blog-single.html"><time datetime="2020-01-01">{{i.date}}</time></a></li>
+                </ul>
+              </div>
+
+              <div class="entry-content">
+                <p>
+                  {{i.conten }}
+                </p>
+              </div>
+
+            </article><!-- End blog entry -->
+{% endfor %}
+{% endblock %}
